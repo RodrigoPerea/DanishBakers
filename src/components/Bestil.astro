@@ -1,0 +1,15 @@
+---
+import { getProducts } from "../../utils/databaseUtils";
+import Product from "./Product.astro";
+const products = await getProducts();
+---
+
+<section class="py-24">
+  <div class="container">
+    <div
+      class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+    >
+      {products.map((product) => <Product {...product} />)}
+    </div>
+  </div>
+</section>

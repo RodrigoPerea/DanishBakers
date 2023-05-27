@@ -1,0 +1,36 @@
+---
+interface Props {
+  antal: number | null;
+  id: number;
+  image: string | null;
+  kategori: string | null;
+  normalPris: number | null;
+  nyPris: number | null;
+  type: string | null;
+}
+const { kategori, antal, image, nyPris, normalPris, id, type } = Astro.props;
+---
+
+<div
+  id={id.toString()}
+  class="flex flex-col border border-gray-300 p-4 rounded-md"
+>
+  <img class="mb-6 w-full aspect-square object-cover" src={image} alt="" />
+  <h2 class="text-xl">{kategori}</h2>
+  <div class="typeWrap">
+    <p class="type">{type}</p>
+  </div>
+  <div class="normalPris">
+    <p class="pris">{normalPris} kr.</p>
+  </div>
+  <div class="flex gap-2 my-3">
+    {antal && <p class="antal">{antal} stk.</p>}
+    {nyPris && <p class="nyPris">{nyPris} kr.</p>}
+  </div>
+
+  <div class="mt-auto">
+    <a class="button-primary" href=" "
+      >Læg i kurv <i class="fa-solid fa-basket-shopping bag"></i></a
+    >
+  </div>
+</div>

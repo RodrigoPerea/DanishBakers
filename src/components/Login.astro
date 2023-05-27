@@ -1,0 +1,58 @@
+<form id="loginForm">
+  <h2>Login</h2>
+  <div class="container">
+    <input type="email" id="emailField" placeholder="Enter Username" name="uname" required />
+    <input type="password" id="passwordField" placeholder="Enter Password" name="psw" required />
+    <button type="submit">Login</button>
+    <div>
+      <input type="checkbox" checked="checked" name="remember" id="rememeberMe" />
+      <label for="rememeberMe">Remeber me</label>
+    </div>
+  </div>
+  <span class="psw">Glemt <a href="#">kodeord?</a></span>
+</form>
+
+<span>Vil du gerne være virksomhedskunde? <a href="../../createUser.html">Opret dig som erhverskunde</a></span>
+<style>
+  h2 {
+    text-align: center;
+    margin-top: 100px;
+  }
+  input {
+    /* margin: 20px; */
+    /* max-width: 450px; */
+    height: 30px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .container > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-items: start;
+    grid-auto-columns: min-content;
+  }
+
+  .container > input:nth-child(-n + 2) {
+    grid-column: 1 / span 2;
+    width: 100%;
+  }
+  label {
+    display: inline;
+  }
+
+  button {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+    grid-column: 1 / span 2;
+    height: 30px;
+    cursor: pointer;
+  }
+</style>

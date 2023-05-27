@@ -1,0 +1,148 @@
+<section>
+  <div class="bagground">
+    <img src="../public/picturs/baggrundKontaktIv.jpeg" alt="" />
+    <div class="wrapper">
+      <img src="" alt="" />
+      <div class="overskrift">
+        <h1>Kontakt os</h1>
+        <p class="text">Eller kontakt os på: <a href="mailto:info@digebaregen.dk">info@digebageren.dk</a></p>
+      </div>
+      <form action="index.html" method="post" class="kontakt-os">
+        <div class="inputWrapper">
+          <input type="text" class="kontaktInput" name="fornavn" required />
+          <label>Fornavn</label>
+        </div>
+
+        <div class="inputWrapper">
+          <input type="text" class="kontaktInput" name="efternavn" required />
+          <label>Efternavn</label>
+        </div>
+
+        <div class="inputWrapper dobbelt">
+          <input type="text" class="kontaktInput" name="email" required />
+          <label>Email</label>
+        </div>
+
+        <div class="inputWrapper textBesked dobbelt">
+          <textarea name="besked" class="kontaktInput" required></textarea>
+
+          <label>Besked</label>
+        </div>
+      </form>
+      <div class="infoBoxWrap">
+        <div class="infoText">
+          <p>
+            Bemærk, hvis du skal have fat i en af vores butikker, skal du skrive eller ringe <a
+              href="https://www.google.dk/search?q=digebageren&sxsrf=APwXEdddWoSUx1HscbYc3usnM6by2tiINw%3A1685099917968&source=hp&ei=jZVwZIzCOM2VgQbI-aiACQ&iflsig=AOEireoAAAAAZHCjnTioqmq9YntiUCiH7CfJMQufq-cz&ved=0ahUKEwjMvJOw7pL_AhXNSsAKHcg8CpAQ4dUDCAk&uact=5&oq=digebageren&gs_lcp=Cgdnd3Mtd2l6EAMyBwgjEIoFECcyBAgjECcyCwguEIAEEMcBEK8BMgsILhCABBDHARCvATIFCAAQgAQyBQgAEIAEMgQIABAeOgcIIxDqAhAnOhEILhCABBCxAxCDARDHARDRAzoLCAAQgAQQsQMQgwE6CAgAEIAEELEDOgcIABCKBRBDOgsILhCKBRCxAxCDAToLCAAQigUQsQMQgwE6CAguEIAEELEDOg0ILhCKBRDHARDRAxBDOgUILhCABDoRCC4QgAQQxwEQrwEQmAUQmwU6CgguENQCEAoQywE6BwguEAoQywE6BwgAEAoQywE6BwguEA0QgAQ6BwgAEA0QgARQ0ARYjxJgoBNoAnAAeACAAXOIAegJkgEDMy45mAEAoAEBsAEK&sclient=gws-wiz"
+              >direkte</a
+            > til den butik.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .bagground img {
+    display: none;
+  }
+  /* virker ikke */
+  .bagground {
+    background-color: rgba(251, 224, 202, 1);
+  }
+
+  .wrapper {
+    max-width: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .overskrift h1 {
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 0.6;
+    color: rgb(0, 0, 0);
+  }
+
+  .text {
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+    font-size: 1.2rem;
+  }
+  .text a {
+    color: blue;
+    transition: 0.4s;
+  }
+  .kontakt-os {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 30px;
+    column-gap: 45px;
+    row-gap: 1rem;
+  }
+  .kontaktInput {
+    width: 100%;
+    background-color: rgba(219, 223, 228, 1);
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 18px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.5s;
+  }
+  .kontaktInput:hover {
+    background-color: rgb(194, 198, 203);
+  }
+  .inputWrapper.dobbelt {
+    grid-column: span 2;
+  }
+
+  .inputWrapper {
+    position: relative;
+  }
+  .inputWrapper label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: rgb(107, 107, 107);
+  }
+  textarea.kontaktInput {
+    resize: none;
+    width: 100%;
+    min-height: 150px;
+  }
+  textarea.kontaktInput ~ label {
+    top: 1.1rem;
+    transform: none;
+  }
+  .infoBoxWrap {
+    background-color: rgba(0, 0, 0, 0.568);
+    padding: 15px;
+    border-radius: 1.5rem;
+    width: 100%;
+  }
+  .infoText {
+    color: white;
+    font-weight: 500;
+  }
+  .infoText a {
+    color: blue;
+  }
+  @media (min-width: 1100px) {
+    .bagground img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .text {
+      color: rgb(255, 255, 255);
+    }
+    .overskrift h1 {
+      color: rgb(255, 255, 255);
+    }
+  }
+</style>

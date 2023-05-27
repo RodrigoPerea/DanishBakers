@@ -1,0 +1,35 @@
+---
+interface Props {
+  image: string;
+  title: string;
+  text: string;
+  cta?: {
+    title: string;
+    href: string;
+  };
+}
+const { title, cta, image, text } = Astro.props;
+---
+
+<section class="grid grid-cols-1 md:grid-cols-3 py-8">
+  <img
+    class="w-full h-full object-cover"
+    src={image}
+    alt={`billede til ${title}`}
+  />
+  <div
+    class="bg-orange-100 flex items-start p-6 col-span-2 flex-col justify-center"
+  >
+    <h2 class="text-2xl font-semibold">{title}</h2>
+    <p class="my-6">
+      {text}
+    </p>
+    {
+      cta && (
+        <a href={cta.href} class="button-primary">
+          {cta.title}
+        </a>
+      )
+    }
+  </div>
+</section>

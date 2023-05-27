@@ -1,0 +1,83 @@
+---
+import Navigation from "../components/Nav.astro";
+import Login from "../components/Login.astro";
+import "../styles/global.css";
+---
+
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="noindex" />
+
+    <title>Virksomheds Login</title>
+  </head>
+  <header><Navigation /></header>
+  <body>
+    <main>
+      <div class="container">
+        <div class="left"><Login /></div>
+        <div class="right">
+          <div class="textAl">
+            <h1>Danish Bakers</h1>
+            <p>Ortenvej 80, 6800 Varde</p>
+            <p>CVR: 43771930</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+
+  <style>
+    /* main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    } */
+
+    .left {
+      background: #ffff;
+      left: 0;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+    }
+    .right {
+      background-color: rgba(253, 247, 242, 1);
+      min-height: 50vh;
+    }
+    .right p,
+    .right h1 {
+      text-align: center;
+    }
+    .textAl {
+      margin-top: 30px;
+
+      padding: 100px;
+    }
+
+    @media (min-width: 1000px) {
+      main {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+      }
+      .right {
+        width: 100%;
+      }
+      .textAl {
+        margin-top: 300px;
+      }
+    }
+  </style>
+
+
+</html>

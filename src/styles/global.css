@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Fauna+One&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button-primary {
+  @apply inline-flex items-center gap-3 px-6 py-3 bg-orange-600 text-white rounded-md;
+}
