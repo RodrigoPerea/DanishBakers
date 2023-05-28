@@ -8,11 +8,10 @@ const navItem = [
     title: "KONTAKT",
     href: "/kontakt",
   },
-  {
-    title: "LOGIN",
-
-    href: "/login",
-  },
+  // {
+  //   title: "LOGIN",
+  //   href: "/login",
+  // },
 ];
 ---
 
@@ -30,12 +29,14 @@ const navItem = [
         {
           navItem.map((item) => (
             <li>
-              <a class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-700 md:p-0" href={item.href}>
+              <a class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-700 md:p-0 font-textFont" href={item.href}>
                 {item.title}
               </a>
             </li>
           ))
         }
+        <li><a href="/login"><i class="fa-solid fa-regular fa-user"></i></a></li>
+        <li class="max-sm:hidden"><i class="fa-solid fa-cart-shopping"></i></li>
       </ul>
     </div>
   </div>
@@ -53,4 +54,3 @@ const navItem = [
   };
   navButton.addEventListener("click", toggleNavBar);
 </script>
-<!-- <script src="https://kit.fontawesome.com/90896d5f40.js" crossorigin="anonymous"></script> -->

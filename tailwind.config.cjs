@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     fontFamily: {
       primary: ["Fauna One", "sans-serif"],
+      textFont: ["Roboto", "sans-serif"],
     },
+
     container: {
       center: true,
       padding: {
@@ -15,6 +17,7 @@ module.exports = {
         "2xl": "6rem",
       },
     },
+
     extend: {},
   },
   plugins: [],

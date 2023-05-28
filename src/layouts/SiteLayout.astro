@@ -1,4 +1,5 @@
 ---
+import Futter from "../components/Futter.astro";
 import Nav from "../components/Nav.astro";
 import "../styles/global.css";
 
@@ -21,9 +22,8 @@ const { title } = Astro.props;
   <main>
     <slot />
   </main>
-  <footer></footer>
-  <script
-    src="https://kit.fontawesome.com/90896d5f40.js"
-    crossorigin="anonymous"
-  ></script>
+  <footer>
+    <Futter />
+  </footer>
+  <script src="https://kit.fontawesome.com/90896d5f40.js" crossorigin="anonymous"></script>
 </body>
