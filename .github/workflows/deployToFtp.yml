@@ -1,0 +1,35 @@
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: 🧭 Setup Node
+        uses: actions/setup-node@v2
+      - name: 🔧 Install
+        run: |
+          npm ci
+      - name: 🔨 Run Build
+        run: |
+          npm run build
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.PUBLIC_SUPABASE_ANON_KEY }}
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: linux63.unoeuro.com
+          username: nordiclive.dk
+          password: ${{ secrets.ftp_password }}
+          local-dir: ./dist/
+          server-dir: ./public_html/kea/danishbakers/
